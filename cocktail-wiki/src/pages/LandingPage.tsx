@@ -1,49 +1,57 @@
 import { useEffect, useState, type ReactElement, type ReactNode } from "react";
-
-interface ICocktail {
-  idDrink: string;
-  strDrink: string;
-  strDrinkThumb: string;
-}
-
-type CocktailResponse = {
-  drinks: ICocktail[];
-};
+import { mapRawCocktailData } from "../mapRawCocktailData";
+import { Link } from "react-router-dom";
+import '../LandingPage.css';
+import type { ICocktail } from "../Models/Types";
 
 export function LandingPage(): ReactElement {
   const [cocktail, setCocktail] = useState<ICocktail[]>([]);
 
+  //funktion som hämtar en random drink från apiet
   const fetchRandomDrink = async (count: number): Promise<ICocktail[]> => {
     if (count <= 0) return [];
 
     const res = await fetch(
       "https://www.thecocktaildb.com/api/json/v1/1/random.php"
     );
-    const data: CocktailResponse = await res.json();
+    const data: { drinks: any[] } = await res.json();
 
-    return data.drinks?.slice(0, count);
+    return data.drinks.map(mapRawCocktailData).slice(0, count);
   };
 
-  const renderDrink = (): ReactNode => {
-    return cocktail.map((ctail) => (
-      <article key={ctail.idDrink}>
-        <h2>{ctail.strDrink}</h2>
-        <img src={ctail.strDrinkThumb}/>
-      </article>
-    ));
-  };
+  //funktion som parar ihop drinknamn och bild. Denna anropar jag sedan i min return
+const renderDrink = (): ReactNode => {
+  return cocktail.map((ctail) => (
+    <article key={ctail.id} className="cocktail-card">
+      <h2>{ctail.name}</h2>
+      <img src={ctail.thumbnail} alt={ctail.name} />
+      <div>
+        <Link to={`/cocktail/${ctail.id}`}>
+          <button>See more</button>
+        </Link>
+      </div>
+    </article>
+  ));
+};
 
+
+  // useeffect körs bara en gång när sidan ladda
   useEffect(() => {
     fetchRandomDrink(1).then((drinks) => {
       setCocktail(drinks);
     });
   }, []);
 
+  //skapa en ladda om funktion som anroopar fetchrandomdrink(1) och uppdaterar state
+  const loadRandomDrink = async () => {
+    const drinks = await fetchRandomDrink(1);
+    setCocktail(drinks);
+  };
+
   return (
     <main>
-      <h1>Emmas drink</h1>
-
       <section>{renderDrink()}</section>
+      <button className="random-button" onClick={loadRandomDrink}>Hämta ny cocktail</button>
     </main>
   );
 }
