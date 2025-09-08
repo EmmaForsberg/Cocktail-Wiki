@@ -48,6 +48,7 @@ export function CocktailInfoPage(): ReactElement {
           ))}
         </ul>
         <p>{cocktail?.glass}</p>
+        <p>{cocktail?.instructions}</p>
       </main>
     </>
   );
