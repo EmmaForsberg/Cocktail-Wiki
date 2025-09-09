@@ -3,15 +3,6 @@ import { useParams } from "react-router-dom";
 import type { ICocktail } from "../util/Types";
 import { mapRawCocktailData } from "../mapRawCocktailData";
 
-//Lookup full cocktail details by id
-//www.thecocktaildb.com/api/json/v1/1/lookup.php?i=11007
-
-//category
-//image
-//tags
-//ingredients & measurements
-//proper glass to serve in
-
 export function CocktailInfoPage(): ReactElement {
   const [cocktail, setCocktail] = useState<ICocktail | null>(null);
 
