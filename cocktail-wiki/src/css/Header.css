@@ -1,0 +1,26 @@
+.header {
+  background-color:darkslateblue;
+  color: white;
+  text-align: center;   /* centrerar text och inline-element */
+  padding: 1.5rem 0;
+  font-size: large;
+}
+
+.header .links {
+  display: flex;
+  justify-content: center; /* centrerar flexboxen horisontellt */
+  gap: 2rem;               /* mellan varje länk */
+  list-style: none;         /* tar bort punkterna om det är ul */
+  margin: 0;
+  padding: 0;
+}
+
+.header .links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.header .links a:hover {
+  text-decoration: underline;
+}

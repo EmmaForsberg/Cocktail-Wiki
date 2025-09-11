@@ -19,18 +19,19 @@ export function CocktailInfoPage(): ReactElement {
   };
 
   useEffect(() => {
-    if (!id) return; // inget id = ingen fetch
+    if (!id) return; 
     fetchCocktailById(id).then((drink) => setCocktail(drink));
   }, [id]);
 
   return (
     <>
-      <main>
+      <main className="info-container">
         <h1>{cocktail?.name}</h1>
         <p>{cocktail?.category}</p>
         <img src={cocktail?.thumbnail} />
-        <p>{cocktail?.tags}</p>
-        <h3>Ingredienser:</h3>
+        <p>Tags:{cocktail?.tags}</p>
+        <p>{cocktail?.glass}</p>
+        <h2>Ingredients:</h2>
         <ul>
           {cocktail?.ingredients.map((ing) => (
             <li key={ing.ingredient}>
@@ -38,7 +39,7 @@ export function CocktailInfoPage(): ReactElement {
             </li>
           ))}
         </ul>
-        <p>{cocktail?.glass}</p>
+
         <p>{cocktail?.instructions}</p>
       </main>
     </>

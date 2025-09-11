@@ -1,0 +1,39 @@
+.info-container {
+  max-width: 800px;       /* Begränsa bredden på kortet */
+  margin: 20px auto;      /* Centrerar kortet på sidan */
+  padding: 20px;          /* Luft inuti kortet */
+  background-color: #fff; /* Vit bakgrund */
+  border-radius: 10px;    /* Runda hörn */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* Mjuk skugga */
+  font-family: Arial, sans-serif;
+}
+
+.info-container h1 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+   text-align: center;
+}
+
+.info-container h2 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-size: 1.4rem;
+}
+
+.info-container p {
+  margin: 5px 0;
+}
+
+.info-container img {
+  width: 100%;          /* Bilden fyller kortets bredd */
+  border-radius: 8px;   /* Runda hörn på bilden */
+  margin-bottom: 15px;
+}
+
+.info-container ul {
+  padding-left: 20px;   /* Indrag för listan */
+}
+
+.info-container li {
+  margin-bottom: 5px;
+}

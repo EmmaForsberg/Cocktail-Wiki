@@ -1,0 +1,17 @@
+.searchpage {
+       display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.searchpage p {
+font-size: 25px;
+}
+
+.searchpage input {
+    height: 25px;
+      margin: 10px; 
+
+}
+

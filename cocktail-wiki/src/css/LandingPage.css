@@ -1,0 +1,39 @@
+.cards-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem;
+  background: #f8f8fc;
+  border-radius: 16px;
+  margin-top: 0; /* eller t.o.m. 0 */
+  padding-top: 0; /* minska eller ta bort */
+}
+
+.cocktail-card {
+  background: #fff;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+  border-radius: 16px;
+  padding: 2rem;
+  width: 850px;
+  text-align: center;
+  transition: box-shadow 0.3s;
+    margin-top: 0;
+}
+
+.cocktail-card:hover {
+  box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+}
+
+.cocktail-card img {
+  width: 85%;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+  transition: transform 0.25s;
+}
+
+.cocktail-card img:hover {
+  transform: scale(1.04);
+}
+

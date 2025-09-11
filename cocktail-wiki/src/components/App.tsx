@@ -1,16 +1,13 @@
-import '../App.css'
-import { Link, Outlet } from 'react-router-dom';
+import { Outlet } from "react-router-dom";
+import { Header } from "./Header";
 
 function App() {
   return (
     <>
-       <nav style={{ background: 'lightgray', padding: '1rem' }}>
-        <Link to="/">Landing</Link>
-        <Link to="/search">Search</Link>
-      </nav>
+      <Header />
       <Outlet /> {/* Här renderas sidan beroende på URL */}
     </>
   );
 }
 
-export default App
+export default App;
