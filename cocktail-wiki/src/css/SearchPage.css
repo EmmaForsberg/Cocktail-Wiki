@@ -15,3 +15,52 @@ font-size: 25px;
 
 }
 
+ul {
+  list-style: none;  
+  padding: 0;
+  margin: 1rem 0;
+  font-size: 25px;
+}
+
+li {
+  margin: 0.4rem 0;  
+  display: flex;     
+  align-items: center;
+}
+
+li::before {
+  content: "🍸";       
+  margin-right: 8px;   
+  font-size: 1.1rem;  
+}
+
+a {
+  text-decoration: none;   
+  color: #0077cc;        
+  font-weight: 500;
+}
+
+a:hover {
+  color: #ff6600;          
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;             
+  margin-top: 1rem;
+}
+
+
+@media (max-width: 600px) {
+  .pagination {
+    flex-direction: column;
+    align-items: center;   
+    gap: 0.5rem;
+  }
+
+  .pagination .button {
+    width: 100%;        
+    max-width: 250px;   
+  }
+}

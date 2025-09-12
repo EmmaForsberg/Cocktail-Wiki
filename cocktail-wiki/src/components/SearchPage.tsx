@@ -49,20 +49,22 @@ export function SearchPage(): ReactElement {
             </li>
           ))}
         </ul>
-        <button
-          className="button"
-          onClick={() => page > 1 && setPage(page - 1)}
-          disabled={page === 1}
-        >
-          Föregående
-        </button>
-        <button
-          className="button"
-          onClick={() => page < totalPages && setPage(page + 1)}
-          disabled={page === totalPages}
-        >
-          Nästa
-        </button>
+    <div className="pagination">
+  <button
+    className="button"
+    onClick={() => page > 1 && setPage(page - 1)}
+    disabled={page === 1}
+  >
+    Föregående
+  </button>
+  <button
+    className="button"
+    onClick={() => page < totalPages && setPage(page + 1)}
+    disabled={page === totalPages}
+  >
+    Nästa
+  </button>
+</div>
       </main>
     </>
   );

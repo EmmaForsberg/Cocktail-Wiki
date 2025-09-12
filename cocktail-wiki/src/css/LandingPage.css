@@ -15,7 +15,8 @@
   box-shadow: 0 2px 12px rgba(0,0,0,0.1);
   border-radius: 16px;
   padding: 2rem;
-  width: 850px;
+  width: 100%;            
+  max-width: 850px;     
   text-align: center;
   transition: box-shadow 0.3s;
     margin-top: 0;
@@ -26,7 +27,8 @@
 }
 
 .cocktail-card img {
-  width: 85%;
+   width: 100%;        
+  max-width: 500px;    
   border-radius: 12px;
   margin-bottom: 1rem;
   box-shadow: 0 3px 10px rgba(0,0,0,0.08);
@@ -37,3 +39,19 @@
   transform: scale(1.04);
 }
 
+@media (max-width: 600px) {
+  .cards-container {
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  .cocktail-card {
+    padding: 1rem;
+    border-radius: 12px;
+  }
+
+  .cocktail-card img {
+    width: 100%;
+    max-width: 100%; 
+  }
+}
